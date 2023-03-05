@@ -14,5 +14,6 @@ contract Vault {
     if (password == _password) {
       locked = false;
     }
+    
   }
 }
