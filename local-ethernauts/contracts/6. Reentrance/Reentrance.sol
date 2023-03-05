@@ -24,6 +24,7 @@ contract Reentrance {
             balances[msg.sender] = 0;
         }
     }
+    
 
     receive() external payable {}
 }

