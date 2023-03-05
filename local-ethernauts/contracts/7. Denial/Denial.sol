@@ -26,8 +26,7 @@ contract Denial {
         owner.call{value: amountToSend}("");
         // keep track of last withdrawal time
         timeLastWithdrawn = block.timestamp;
-        withdrawPartnerBalances[partner] =
-            withdrawPartnerBalances[partner] +
+        withdrawPartnerBalances[partner] = withdrawPartnerBalances[partner] +
             (amountToSend);
     }
 
